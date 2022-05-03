@@ -105,47 +105,47 @@ void deleteAtHead(node *&head)
     delete todelete;
 }
 
-// void middleElement(node *head)
-// {
-//     node *slow_ptr = head;
-//     node *fast_ptr = head;
-
-//     while (fast_ptr->next != NULL && fast_ptr->next->next != NULL)
-//     {
-//         fast_ptr = fast_ptr->next->next;
-//         slow_ptr = slow_ptr->next;
-//     }
-//     cout << "The middle element is " << slow_ptr->data << endl;
-// }
-
 void middleElement(node *head)
 {
-    node *ptr = head;
-    int count = 0;
-    while (ptr != NULL && ptr->next != NULL)
-    {
-        count++;
-        ptr = ptr->next;
-    }
-    cout << "The length is " << count << endl;
+    node *slow_ptr = head;
+    node *fast_ptr = head;
 
-    ptr = head;
-    int c = 0;
-    while (c < count / 2)
+    while (fast_ptr->next != NULL && fast_ptr->next->next != NULL)
     {
-        ptr = ptr->next;
-        c++;
+        fast_ptr = fast_ptr->next->next;
+        slow_ptr = slow_ptr->next;
     }
-
-    if (count / 2 == 0)
-    {
-        cout << "The middle element is " << ptr->data << endl;
-    }
-    else
-    {
-        cout << "The middle element is " << ptr->next->data << endl;
-    }
+    cout << "The middle element is " << slow_ptr->data << endl;
 }
+
+// void middleElement(node *head)
+// {
+//     node *ptr = head;
+//     int count = 0;
+//     while (ptr != NULL && ptr->next != NULL)
+//     {
+//         count++;
+//         ptr = ptr->next;
+//     }
+//     cout << "The length is " << count << endl;
+
+//     ptr = head;
+//     int c = 0;
+//     while (c < count / 2)
+//     {
+//         ptr = ptr->next;
+//         c++;
+//     }
+
+//     if (count / 2 == 0)
+//     {
+//         cout << "The middle element is " << ptr->data << endl;
+//     }
+//     else
+//     {
+//         cout << "The middle element is " << ptr->next->data << endl;
+//     }
+// }
 
 
 
